@@ -1,0 +1,629 @@
+X=randi(15,6)
+
+X =
+
+    11    12    11     2    12     9
+     5    12    12     8     4     3
+    15     3     5    15     8     3
+     1     8    11     6    11     4
+     7     7    10     9    14    13
+     6    10     3     4    15     4
+
+A1=X<6
+
+A1 =
+
+  6×6 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   0   0   0   1   0   0
+   1   0   0   0   1   1
+   0   1   1   0   0   1
+   1   0   0   0   0   1
+   0   0   0   0   0   0
+   0   0   1   1   0   1
+
+A1=3.*A1
+
+A1 =
+
+     0     0     0     3     0     0
+     3     0     0     0     3     3
+     0     3     3     0     0     3
+     3     0     0     0     0     3
+     0     0     0     0     0     0
+     0     0     3     3     0     3
+
+A2=(X==6)+(X==7)
+
+A2 =
+
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     1     0     0
+     1     1     0     0     0     0
+     1     0     0     0     0     0
+
+A2=4.*A2
+
+A2 =
+
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     4     0     0
+     4     4     0     0     0     0
+     4     0     0     0     0     0
+
+A3=(X==8)+(X==9)
+
+A3 =
+
+     0     0     0     0     0     1
+     0     0     0     1     0     0
+     0     0     0     0     1     0
+     0     1     0     0     0     0
+     0     0     0     1     0     0
+     0     0     0     0     0     0
+
+A3=5.*A3
+
+A3 =
+
+     0     0     0     0     0     5
+     0     0     0     5     0     0
+     0     0     0     0     5     0
+     0     5     0     0     0     0
+     0     0     0     5     0     0
+     0     0     0     0     0     0
+
+A4=(X==10)+(X==11)
+
+A4 =
+
+     1     0     1     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     1     0     1     0
+     0     0     1     0     0     0
+     0     1     0     0     0     0
+
+A4=6.*A4
+
+A4 =
+
+     6     0     6     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     6     0     6     0
+     0     0     6     0     0     0
+     0     6     0     0     0     0
+
+A5=(X==12)+(X==13)
+
+A5 =
+
+     0     1     0     0     1     0
+     0     1     1     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     1
+     0     0     0     0     0     0
+
+A5=7.*A5
+
+A5 =
+
+     0     7     0     0     7     0
+     0     7     7     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     7
+     0     0     0     0     0     0
+
+A6=(X==14)+(X==15)
+
+A6 =
+
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     1     0     0     1     0     0
+     0     0     0     0     0     0
+     0     0     0     0     1     0
+     0     0     0     0     1     0
+
+A6=8.*A6
+
+A6 =
+
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     8     0     0     8     0     0
+     0     0     0     0     0     0
+     0     0     0     0     8     0
+     0     0     0     0     8     0
+
+A0=A1+A2+A3+A4+A5+A6
+
+A0 =
+
+     6     7     6     3     7     5
+     3     7     7     5     3     3
+     8     3     3     8     5     3
+     3     5     6     4     6     3
+     4     4     6     5     8     7
+     4     6     3     3     8     3
+
+numel(find(A0==3))
+
+ans =
+
+    12
+
+numel(find(A0==4))
+
+ans =
+
+     4
+
+numel(find(A0==5))
+
+ans =
+
+     5
+
+numel(find(A0==6))
+
+ans =
+
+     6
+
+numel(find(A0==7))
+
+ans =
+
+     5
+
+numel(find(A0==8))
+
+ans =
+
+     4
+
+X
+
+X =
+
+    11    12    11     2    12     9
+     5    12    12     8     4     3
+    15     3     5    15     8     3
+     1     8    11     6    11     4
+     7     7    10     9    14    13
+     6    10     3     4    15     4
+
+circshift(X,[1 -2])
+
+ans =
+
+     3     4    15     4     6    10
+    11     2    12     9    11    12
+    12     8     4     3     5    12
+     5    15     8     3    15     3
+    11     6    11     4     1     8
+    10     9    14    13     7     7
+
+%to przesuniêcie wydaje mi siê dobe, bo skoro przenosimy siê o dwa w lewo i jedno w dó³, 
+%to popatrz na trzeci¹ kolumnê w X i ona rzeczywiœcie staje siê pierwsz¹ i ostatni wiersz jest pierwszym
+%czyli mamy dobre zawiniêcie. 
+
+A0
+
+A0 =
+
+     6     7     6     3     7     5
+     3     7     7     5     3     3
+     8     3     3     8     5     3
+     3     5     6     4     6     3
+     4     4     6     5     8     7
+     4     6     3     3     8     3
+
+circshift(A0,[1 -2])
+
+ans =
+
+     3     3     8     3     4     6
+     6     3     7     5     6     7
+     7     5     3     3     3     7
+     3     8     5     3     8     3
+     6     4     6     3     3     5
+     6     5     8     7     4     4
+
+%i w³aœnie w tym zadaniu i kolejnych wydaje mi siê, 
+%¿e powinniœmy przesuwaæ t¹ gotow¹ macie¿ A0, a nie t¹ na pocz¹tku
+
+
+any(A0==3)
+
+ans =
+
+  1×6 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1   1   1   1   1   1
+
+all(any(A0==3))
+
+ans =
+
+  <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a>
+
+   1
+
+A0
+
+A0 =
+
+     6     7     6     3     7     5
+     3     7     7     5     3     3
+     8     3     3     8     5     3
+     3     5     6     4     6     3
+     4     4     6     5     8     7
+     4     6     3     3     8     3
+
+A=[A0(:,1:2)]
+
+A =
+
+     6     7
+     3     7
+     8     3
+     3     5
+     4     4
+     4     6
+
+B=[A0(:,3) A0(:,4); A0(:,5) A0(:,6)]
+
+B =
+
+     6     3
+     7     5
+     3     8
+     6     4
+     6     5
+     3     3
+     7     5
+     3     3
+     5     3
+     6     3
+     8     7
+     8     3
+
+
+[k,g]=ismember(A,B,'rows')
+
+k =
+
+  6×1 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   0
+   0
+   1
+   0
+   0
+   0
+
+
+g =
+
+     0
+     0
+    12
+     0
+     0
+     0
+
+
+
+
+
+
+
+
+
+
+
+x=randi(9,[23,1])
+
+x =
+
+     8
+     3
+     9
+     4
+     2
+     3
+     6
+     5
+     4
+     8
+     6
+     5
+     9
+     3
+     7
+     7
+     4
+     6
+     1
+     1
+     5
+     8
+     9
+
+y=randi(9,[23,1])
+
+y =
+
+     2
+     6
+     5
+     1
+     4
+     2
+     8
+     3
+     5
+     2
+     6
+     3
+     6
+     7
+     7
+     5
+     1
+     3
+     9
+     2
+     8
+     5
+     9
+
+xy=[x,y]
+
+xy =
+
+     8     2
+     3     6
+     9     5
+     4     1
+     2     4
+     3     2
+     6     8
+     5     3
+     4     5
+     8     2
+     6     6
+     5     3
+     9     6
+     3     7
+     7     7
+     7     5
+     4     1
+     6     3
+     1     9
+     1     2
+     5     8
+     8     5
+     9     9
+
+xy=unique(sort(xy,2),'rows')
+
+xy =
+
+     1     2
+     1     4
+     1     9
+     2     3
+     2     4
+     2     8
+     3     5
+     3     6
+     3     7
+     4     5
+     5     7
+     5     8
+     5     9
+     6     6
+     6     8
+     6     9
+     7     7
+     9     9
+
+size(xy,1)
+
+ans =
+
+    18
+
+xy=[xy;[1 3; 3 4; 4 7; 7 8; 8 9]]
+
+xy =
+
+     1     2
+     1     4
+     1     9
+     2     3
+     2     4
+     2     8
+     3     5
+     3     6
+     3     7
+     4     5
+     5     7
+     5     8
+     5     9
+     6     6
+     6     8
+     6     9
+     7     7
+     9     9
+     1     3
+     3     4
+     4     7
+     7     8
+     8     9
+
+size(xy,1)
+
+ans =
+
+    23
+
+x=xy(:,1);
+y=xy(:,2);
+
+gr=graph(x,y)
+
+gr = 
+
+  <a href="matlab:helpPopup graph" style="font-weight:bold">graph</a> with properties:
+
+    Edges: [23×1 table]
+    Nodes: [9×0 table]
+
+pgr=plot(gr)
+
+pgr = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'  '6'  '7'  '8'  '9'}
+     EdgeLabel: {}
+         XData: [-0.5976 0.4714 0.1075 1.3727 0.5851 -1.7523 1.6772 -0.3505 -1.5134]
+         YData: [1.6154 1.4688 0.1661 0.7243 -0.9633 -1.3256 -0.8134 -0.8165 -0.0558]
+         ZData: [0 0 0 0 0 0 0 0 0]
+
+  Show <a href="matlab:if exist('pgr', 'var'), matlab.graphics.internal.getForDisplay('pgr', pgr, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('pgr'), end">all properties</a>
+
+n5=neighbors(gr,5)
+
+n5 =
+
+     3
+     4
+     7
+     8
+     9
+
+pgr=plot(gr)
+
+pgr = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'  '6'  '7'  '8'  '9'}
+     EdgeLabel: {}
+         XData: [-0.5976 0.4714 0.1075 1.3727 0.5851 -1.7523 1.6772 -0.3505 -1.5134]
+         YData: [1.6154 1.4688 0.1661 0.7243 -0.9633 -1.3256 -0.8134 -0.8165 -0.0558]
+         ZData: [0 0 0 0 0 0 0 0 0]
+
+  Show <a href="matlab:if exist('pgr', 'var'), matlab.graphics.internal.getForDisplay('pgr', pgr, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('pgr'), end">all properties</a>
+
+
+highlight(pgr,n5,'NodeColor','r','Marker','^')
+
+
+pgr=plot(gr)
+
+pgr = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'  '6'  '7'  '8'  '9'}
+     EdgeLabel: {}
+         XData: [-0.5976 0.4714 0.1075 1.3727 0.5851 -1.7523 1.6772 -0.3505 -1.5134]
+         YData: [1.6154 1.4688 0.1661 0.7243 -0.9633 -1.3256 -0.8134 -0.8165 -0.0558]
+         ZData: [0 0 0 0 0 0 0 0 0]
+
+  Show <a href="matlab:if exist('pgr', 'var'), matlab.graphics.internal.getForDisplay('pgr', pgr, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('pgr'), end">all properties</a>
+
+n7=neighbors(gr,7)
+
+n7 =
+
+     3
+     4
+     5
+     7
+     7
+     8
+
+highlight(pgr,n7,'NodeColor','r','Marker','^')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+v=randi([1,6],[1 9])
+
+v =
+
+     1     3     1     6     1     5     5     6     1
+
+
+M=randi([-2,3],v);
+size(M)
+
+ans =
+
+     1     3     1     6     1     5     5     6
+
+M=shiftdim(M,2);
+size(M)
+
+ans =
+
+     1     6     1     5     5     6     1     3
+
+M=squeeze(M);
+size(M)
+
+ans =
+
+     6     5     5     6     3
+
+M(:,2,:,:,:,:)=0;
+M(3,2,1,1,1,1)
+
+ans =
+
+     0
+
+diary off
