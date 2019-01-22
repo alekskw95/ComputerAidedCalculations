@@ -1,0 +1,320 @@
+a=[33:50];
+a
+
+a =
+
+    33    34    35    36    37    38    39    40    41    42    43    44    45    46    47    48    49    50
+
+char(a)
+
+ans =
+
+    '!"#$%&'()*+,-./012'
+
+%powyzej ciag znakow o tych numerach z a
+b=[161:170];
+char(b)
+
+ans =
+
+    '¤¦§¨©'
+
+char(a, b)
+
+ans =
+
+  2×18 <a href="matlab:helpPopup char" style="font-weight:bold">char</a> array
+
+    '!"#$%&'()*+,-./012'
+    '¤¦§¨©        '
+
+C={'a' 'abc'; 1 'def'}
+
+C =
+
+  2×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {'a'}    {'abc'}
+    {[1]}    {'def'}
+
+C{1, 1} %1 wyraz
+
+ans =
+
+    'a'
+
+C{1, :} %1 wiesz
+
+ans =
+
+    'a'
+
+
+ans =
+
+    'abc'
+
+cell2mat(C) %bedzie marudzil
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cell2mat', 'F:\matlabT\toolbox\matlab\datatypes\cell2mat.p', 45)" style="font-weight:bold">cell2mat</a> (<a href="matlab: opentoline('F:\matlabT\toolbox\matlab\datatypes\cell2mat.p',45,0)">line 45</a>)
+All contents of the input cell array must be of the same data type.
+} 
+D=C
+
+D =
+
+  2×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {'a'}    {'abc'}
+    {[1]}    {'def'}
+
+D[2, 1}='ghi'
+ D[2, 1}='ghi'
+  
+{Error: Unbalanced or unexpected parenthesis or bracket.
+} 
+D{2, 1}='ghi'
+
+D =
+
+  2×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {'a'  }    {'abc'}
+    {'ghi'}    {'def'}
+
+cell2mat(D)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cat')" style="font-weight:bold">cat</a>
+Dimensions of matrices being concatenated are not consistent.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cell2mat', 'F:\matlabT\toolbox\matlab\datatypes\cell2mat.p', 83)" style="font-weight:bold">cell2mat</a> (<a href="matlab: opentoline('F:\matlabT\toolbox\matlab\datatypes\cell2mat.p',83,0)">line 83</a>)
+            m{n} = cat(1,c{:,n});
+} 
+D{1,1}='jhc'
+
+D =
+
+  2×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {'jhc'}    {'abc'}
+    {'ghi'}    {'def'}
+
+cell2mat(D)
+
+ans =
+
+  2×6 <a href="matlab:helpPopup char" style="font-weight:bold">char</a> array
+
+    'jhcabc'
+    'ghidef'
+
+%zrobil dwa ciagi 1 z 1w drugi z 2w
+
+C{2,1}=num2str(C{2,1})
+
+C =
+
+  2×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {'a'}    {'abc'}
+    {'1'}    {'def'}
+
+cell2mat(C)
+
+ans =
+
+  2×4 <a href="matlab:helpPopup char" style="font-weight:bold">char</a> array
+
+    'aabc'
+    '1def'
+
+%teraz zadzialalo bo 1 zmieniona zostala na string-owa 1
+%laczenie ciagow konkatenacja
+%laczymy 1 linijke C
+strcat(C{1,1}, C{1,2})
+
+ans =
+
+    'aabc'
+
+strcat(C,D)
+
+ans =
+
+  2×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {'ajhc'}    {'abcabc'}
+    {'1ghi'}    {'defdef'}
+
+%to powyzej to wymiary musza sie zgadzac inaczej nie polaczy
+A=randi(8,8,2)
+
+A =
+
+     7     8
+     8     8
+     2     2
+     8     8
+     6     8
+     1     4
+     3     7
+     5     2
+
+file = strcat('file', num2str(A(1,1)), 'x', num2str(A(1,2)), '.xlsx') 
+
+file =
+
+    'file7x8.xlsx'
+
+arkusz = strcat('file', num2str(A(2,1)), 'x', num2str(A(2,2)), '.xlsx') 
+
+arkusz =
+
+    'file8x8.xlsx'
+
+xlswrite(file, A, arkusz)
+[Warning: Added specified worksheet.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('xlswrite>activate_sheet', 'F:\matlabT\toolbox\matlab\iofun\xlswrite.m', 300)" style="font-weight:bold">xlswrite>activate_sheet</a> (<a href="matlab: opentoline('F:\matlabT\toolbox\matlab\iofun\xlswrite.m',300,0)">line 300</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('xlswrite/ExecuteWrite', 'F:\matlabT\toolbox\matlab\iofun\xlswrite.m', 266)" style="font-weight:bold">xlswrite/ExecuteWrite</a> (<a href="matlab: opentoline('F:\matlabT\toolbox\matlab\iofun\xlswrite.m',266,0)">line 266</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('xlswrite', 'F:\matlabT\toolbox\matlab\iofun\xlswrite.m', 220)" style="font-weight:bold">xlswrite</a> (<a href="matlab: opentoline('F:\matlabT\toolbox\matlab\iofun\xlswrite.m',220,0)">line 220</a>)] 
+file = strcat('plik', num2str(A(1,1)), 'x', num2str(A(1,2)), '.xlsx')
+
+file =
+
+    'plik7x8.xlsx'
+
+arkusz = strcat('TenArkusz', num2str(A(2,1)), 'x', num2str(A(2,2)), '.xlsx')
+
+arkusz =
+
+    'TenArkusz8x8.xlsx'
+
+xlswrite(file, A, arkusz)
+[Warning: Added specified worksheet.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('xlswrite>activate_sheet', 'F:\matlabT\toolbox\matlab\iofun\xlswrite.m', 300)" style="font-weight:bold">xlswrite>activate_sheet</a> (<a href="matlab: opentoline('F:\matlabT\toolbox\matlab\iofun\xlswrite.m',300,0)">line 300</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('xlswrite/ExecuteWrite', 'F:\matlabT\toolbox\matlab\iofun\xlswrite.m', 266)" style="font-weight:bold">xlswrite/ExecuteWrite</a> (<a href="matlab: opentoline('F:\matlabT\toolbox\matlab\iofun\xlswrite.m',266,0)">line 266</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('xlswrite', 'F:\matlabT\toolbox\matlab\iofun\xlswrite.m', 220)" style="font-weight:bold">xlswrite</a> (<a href="matlab: opentoline('F:\matlabT\toolbox\matlab\iofun\xlswrite.m',220,0)">line 220</a>)] 
+arkusz = strcat('TenArkusz', num2str(A(2,1)), 'x', num2str(A(2,2)))
+
+arkusz =
+
+    'TenArkusz8x8'
+
+xlswrite(file, A, arkusz)
+[Warning: Added specified worksheet.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('xlswrite>activate_sheet', 'F:\matlabT\toolbox\matlab\iofun\xlswrite.m', 300)" style="font-weight:bold">xlswrite>activate_sheet</a> (<a href="matlab: opentoline('F:\matlabT\toolbox\matlab\iofun\xlswrite.m',300,0)">line 300</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('xlswrite/ExecuteWrite', 'F:\matlabT\toolbox\matlab\iofun\xlswrite.m', 266)" style="font-weight:bold">xlswrite/ExecuteWrite</a> (<a href="matlab: opentoline('F:\matlabT\toolbox\matlab\iofun\xlswrite.m',266,0)">line 266</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('xlswrite', 'F:\matlabT\toolbox\matlab\iofun\xlswrite.m', 220)" style="font-weight:bold">xlswrite</a> (<a href="matlab: opentoline('F:\matlabT\toolbox\matlab\iofun\xlswrite.m',220,0)">line 220</a>)] 
+matlab.internal.language.introspective.errorDocCallback('xlswrite', 'F:\matlabT\toolbox\matlab\iofun\xlswrite.m', 220)
+%grafy znakowe
+G=randi([0, 1], 5) %5 wierzcholkow bez wag
+
+G =
+
+     0     0     1     0     1
+     1     1     0     0     0
+     1     1     1     0     1
+     1     1     0     0     0
+     1     1     1     1     0
+
+dg=digraph(G)
+
+dg = 
+
+  <a href="matlab:helpPopup digraph" style="font-weight:bold">digraph</a> with properties:
+
+    Edges: [14×2 table]
+    Nodes: [5×0 table]
+
+pdG = plot(dg)
+
+pdG = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'}
+     EdgeLabel: {}
+         XData: [-0.7519 -0.0018 -1.1377 1.1384 0.7530]
+         YData: [0.7519 0.0018 -1.1384 1.1377 -0.7530]
+         ZData: [0 0 0 0 0]
+
+  Show <a href="matlab:if exist('pdG', 'var'), matlab.graphics.internal.getForDisplay('pdG', pdG, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('pdG'), end">all properties</a>
+
+dg.Nodes.Name={'first', 'second', 'third', 'fourth', 'fifth'}
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('digraph/subsasgn', 'F:\matlabT\toolbox\matlab\graphfun\@digraph\subsasgn.m', 51)" style="font-weight:bold">digraph/subsasgn</a> (<a href="matlab: opentoline('F:\matlabT\toolbox\matlab\graphfun\@digraph\subsasgn.m',51,0)">line 51</a>)
+To assign to or create a variable in a table, the number of rows must match the height of the table.
+} 
+dg.Nodes.Name={'first', 'second', 'third', 'fourth', 'fifth'}'
+
+dg = 
+
+  <a href="matlab:helpPopup digraph" style="font-weight:bold">digraph</a> with properties:
+
+    Edges: [14×2 table]
+    Nodes: [5×1 table]
+
+pdG = plot(dg)
+
+pdG = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'first'  'second'  'third'  'fourth'  'fifth'}
+     EdgeLabel: {}
+         XData: [-0.7519 -0.0018 -1.1377 1.1384 0.7530]
+         YData: [0.7519 0.0018 -1.1384 1.1377 -0.7530]
+         ZData: [0 0 0 0 0]
+
+  Show <a href="matlab:if exist('pdG', 'var'), matlab.graphics.internal.getForDisplay('pdG', pdG, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('pdG'), end">all properties</a>
+
+dg=rmnode(dg,'third')
+
+dg = 
+
+  <a href="matlab:helpPopup digraph" style="font-weight:bold">digraph</a> with properties:
+
+    Edges: [8×2 table]
+    Nodes: [4×1 table]
+
+pdG = plot(dg)
+
+pdG = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'first'  'second'  'fourth'  'fifth'}
+     EdgeLabel: {}
+         XData: [0.9090 -0.9090 1.0411 -1.0411]
+         YData: [1.0467 -1.0467 -0.9042 0.9042]
+         ZData: [0 0 0 0]
+
+  Show <a href="matlab:if exist('pdG', 'var'), matlab.graphics.internal.getForDisplay('pdG', pdG, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('pdG'), end">all properties</a>
+
+[a1 a2]=C{1,:} %po staremu C(1,:) odwolanie do 1 wiersza
+
+a1 =
+
+    'a'
+
+
+a2 =
+
+    'abc'
+
+diary off

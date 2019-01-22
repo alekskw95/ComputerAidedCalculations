@@ -1,0 +1,280 @@
+g1=randi([0,1],6)
+
+g1 =
+
+     1     0     1     1     1     1
+     1     1     0     1     1     0
+     0     1     1     1     1     0
+     1     1     0     0     0     0
+     1     0     0     1     1     0
+     0     1     1     1     0     1
+
+digraph(g1) %graf bez wag dla macierzy kwadratowej
+
+ans = 
+
+  <a href="matlab:helpPopup digraph" style="font-weight:bold">digraph</a> with properties:
+
+    Edges: [22×2 table]
+    Nodes: [6×0 table]
+
+g2=ans;
+pg2=plot(g2) %graf skierowany
+
+pg2 = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'  '6'}
+     EdgeLabel: {}
+         XData: [0.2925 0.9466 -0.9814 -0.2703 1.3497 -1.3372]
+         YData: [-1.1168 -0.2355 0.2584 1.1013 1.1784 -1.1858]
+         ZData: [0 0 0 0 0 0]
+
+  Show <a href="matlab:if exist('pg2', 'var'), matlab.graphics.internal.getForDisplay('pg2', pg2, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('pg2'), end">all properties</a>
+
+g1
+
+g1 =
+
+     1     0     1     1     1     1
+     1     1     0     1     1     0
+     0     1     1     1     1     0
+     1     1     0     0     0     0
+     1     0     0     1     1     0
+     0     1     1     1     0     1
+
+g3=triu(g1)
+
+g3 =
+
+     1     0     1     1     1     1
+     0     1     0     1     1     0
+     0     0     1     1     1     0
+     0     0     0     0     0     0
+     0     0     0     0     1     0
+     0     0     0     0     0     1
+
+g3+g3
+
+ans =
+
+     2     0     2     2     2     2
+     0     2     0     2     2     0
+     0     0     2     2     2     0
+     0     0     0     0     0     0
+     0     0     0     0     2     0
+     0     0     0     0     0     2
+
+g3+g3'
+
+ans =
+
+     2     0     1     1     1     1
+     0     2     0     1     1     0
+     1     0     2     1     1     0
+     1     1     1     0     0     0
+     1     1     1     0     2     0
+     1     0     0     0     0     2
+
+g4=ans
+
+g4 =
+
+     2     0     1     1     1     1
+     0     2     0     1     1     0
+     1     0     2     1     1     0
+     1     1     1     0     0     0
+     1     1     1     0     2     0
+     1     0     0     0     0     2
+
+g4=min(g4,1)
+
+g4 =
+
+     1     0     1     1     1     1
+     0     1     0     1     1     0
+     1     0     1     1     1     0
+     1     1     1     0     0     0
+     1     1     1     0     1     0
+     1     0     0     0     0     1
+
+g4=min(g4,2)
+
+g4 =
+
+     1     0     1     1     1     1
+     0     1     0     1     1     0
+     1     0     1     1     1     0
+     1     1     1     0     0     0
+     1     1     1     0     1     0
+     1     0     0     0     0     1
+
+g4=min(g4,1)
+
+g4 =
+
+     1     0     1     1     1     1
+     0     1     0     1     1     0
+     1     0     1     1     1     0
+     1     1     1     0     0     0
+     1     1     1     0     1     0
+     1     0     0     0     0     1
+
+g5=graph(g4)
+
+g5 = 
+
+  <a href="matlab:helpPopup graph" style="font-weight:bold">graph</a> with properties:
+
+    Edges: [13×2 table]
+    Nodes: [6×0 table]
+
+pg5=plot(g5) %graf nieskierowany
+
+pg5 = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'  '6'}
+     EdgeLabel: {}
+         XData: [0.4107 -1.2609 0.4206 -0.2461 -0.5304 1.2061]
+         YData: [0.3823 -0.6653 -0.4105 -0.7177 0.0861 1.3251]
+         ZData: [0 0 0 0 0 0]
+
+  Show <a href="matlab:if exist('pg5', 'var'), matlab.graphics.internal.getForDisplay('pg5', pg5, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('pg5'), end">all properties</a>
+
+diary off
+
+k=5;
+n=6;
+A=randi (k , n)
+
+A =
+
+     5     3     1     5     5     1
+     3     1     4     5     4     1
+     1     5     1     4     5     1
+     2     4     1     1     3     2
+     5     3     3     4     3     5
+     1     3     1     3     5     5
+
+A1=~mod(A, k)
+
+A1 =
+
+  6×6 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1   0   0   1   1   0
+   0   0   0   1   0   0
+   0   1   0   0   1   0
+   0   0   0   0   0   0
+   1   0   0   0   0   1
+   0   0   0   0   1   1
+
+dg1=digraph (A1)
+
+dg1 = 
+
+  <a href="matlab:helpPopup digraph" style="font-weight:bold">digraph</a> with properties:
+
+    Edges: [10×1 table]
+    Nodes: [6×0 table]
+
+p1=plot( dg1 ) %graf skierowany
+
+p1 = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'  '6'}
+     EdgeLabel: {}
+         XData: [-0.4120 1.1368 0.5908 0.4549 -0.5035 -1.2670]
+         YData: [0.5908 0.4549 -0.4120 1.1368 -0.5035 -1.2670]
+         ZData: [0 0 0 0 0 0]
+
+  Show <a href="matlab:if exist('p1', 'var'), matlab.graphics.internal.getForDisplay('p1', p1, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('p1'), end">all properties</a>
+
+B=randi (k , n)
+
+B =
+
+     1     2     2     1     3     4
+     2     3     1     4     5     4
+     3     1     3     2     2     1
+     3     5     2     3     4     1
+     4     1     5     3     4     5
+     4     1     5     5     3     1
+
+B1=~mod(B, k)
+
+B1 =
+
+  6×6 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   0   0   0   0   0   0
+   0   0   0   0   1   0
+   0   0   0   0   0   0
+   0   1   0   0   0   0
+   0   0   1   0   0   1
+   0   0   1   1   0   0
+
+B2=B1.*randi (7 ,n)
+
+B2 =
+
+     0     0     0     0     0     0
+     0     0     0     0     7     0
+     0     0     0     0     0     0
+     0     6     0     0     0     0
+     0     0     5     0     0     5
+     0     0     2     2     0     0
+
+dg2=digraph (B2)
+
+dg2 = 
+
+  <a href="matlab:helpPopup digraph" style="font-weight:bold">digraph</a> with properties:
+
+    Edges: [6×2 table]
+    Nodes: [6×0 table]
+
+p2=plot( dg2 , 'EdgeLabel' , dg2 . Edges . Weight ) %graf skierowany z wagami
+
+p2 = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'  '6'}
+     EdgeLabel: {'7'  '6'  '5'  '5'  '2'  '2'}
+         XData: [3.5757 0.3699 2.8359 1.3593 1.5054 2.4187]
+         YData: [0.3699 1.8465 0.3699 2.8359 0.7871 1.7004]
+         ZData: [0 0 0 0 0 0]
+
+  Show <a href="matlab:if exist('p2', 'var'), matlab.graphics.internal.getForDisplay('p2', p2, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('p2'), end">all properties</a>
+
+

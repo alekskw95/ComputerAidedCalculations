@@ -1,0 +1,235 @@
+A=[1,2;3,4]
+
+A =
+
+     1     2
+     3     4
+
+flip(A)
+
+ans =
+
+     3     4
+     1     2
+
+flip(A,1)
+
+ans =
+
+     3     4
+     1     2
+
+flip(A,2)
+
+ans =
+
+     2     1
+     4     3
+
+reshape([1:12], 3, 4)
+
+ans =
+
+     1     4     7    10
+     2     5     8    11
+     3     6     9    12
+
+A=ans;
+sum(A)
+
+ans =
+
+     6    15    24    33
+
+sum(ans)
+
+ans =
+
+    78
+
+sum(sum(A))
+
+ans =
+
+    78
+
+sum(A,1)
+
+ans =
+
+     6    15    24    33
+
+sum(A,2)
+
+ans =
+
+    22
+    26
+    30
+
+randi(7)
+
+ans =
+
+     6
+
+randi(7)
+
+ans =
+
+     7
+
+randi([11,12],[3,5])
+
+ans =
+
+    11    11    12    12    12
+    12    11    12    12    11
+    12    12    11    11    11
+
+rand(4,6)
+
+ans =
+
+    0.9157    0.0357    0.7577    0.1712    0.0462    0.3171
+    0.7922    0.8491    0.7431    0.7060    0.0971    0.9502
+    0.9595    0.9340    0.3922    0.0318    0.8235    0.0344
+    0.6557    0.6787    0.6555    0.2769    0.6948    0.4387
+
+area1(4,3,5)
+{Undefined function or variable 'area1'.
+} 
+area1(4,3,5)
+
+ans =
+
+     6
+
+area1(5,12,13)
+
+ans =
+
+    30
+
+isprime(2)
+
+ans =
+
+  <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a>
+
+   1
+
+isprime(3)
+
+ans =
+
+  <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a>
+
+   1
+
+isprime(4)
+
+ans =
+
+  <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a>
+
+   0
+
+isprime(97)
+
+ans =
+
+  <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a>
+
+   1
+
+primelist(55)
+{Undefined function or variable 'primelist'.
+} 
+primelist(55)
+{Undefined function or variable 'primelist'.
+} 
+primelist(55)
+{Undefined function or variable 'primelist'.
+} 
+primelist(100)
+{Undefined function or variable 'primelist'.
+} 
+primelist(55)
+{Undefined function or variable 'primelist'.
+} 
+primelist(55)
+{Undefined function or variable 'isprime1'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('primelist', 'F:\matlabT\primelist.m', 6)" style="font-weight:bold">primelist</a> (<a href="matlab: opentoline('F:\matlabT\primelist.m',6,0)">line 6</a>)
+    if isprime1(j)
+} 
+primelist(55)
+
+ans =
+
+     2
+     3
+     5
+     7
+    11
+    13
+    17
+    19
+    23
+    29
+    31
+    37
+    41
+    43
+    47
+    53
+
+primelist(100)
+
+ans =
+
+     2
+     3
+     5
+     7
+    11
+    13
+    17
+    19
+    23
+    29
+    31
+    37
+    41
+    43
+    47
+    53
+    59
+    61
+    67
+    71
+    73
+    79
+    83
+    89
+    97
+
+tic; primelist(1000); toc
+Elapsed time is 0.009491 seconds.
+tic; primelist(1000); t=toc
+
+t =
+
+    0.0024
+
+tic; primelist1(200); t=toc
+{Undefined function or variable 'primelist1'.
+} 
+tic; primelist1(200); t=toc
+
+t =
+
+    0.0050
+
+diary off

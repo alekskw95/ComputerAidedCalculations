@@ -1,0 +1,454 @@
+E=randi([1,7],1,8)
+
+E =
+
+     5     5     2     1     4     7     3     5
+
+G=rand(1,7)
+
+G =
+
+    0.2238    0.7513    0.2551    0.5060    0.6991    0.8909    0.9593
+
+G=rand(1,8)
+
+G =
+
+    0.5472    0.1386    0.1493    0.2575    0.8407    0.2543    0.8143    0.2435
+
+E=randi([1,7],2,8)
+
+E =
+
+     7     2     5     3     5     7     6     3
+     3     2     4     6     4     3     6     4
+
+E+3
+
+ans =
+
+    10     5     8     6     8    10     9     6
+     6     5     7     9     7     6     9     7
+
+sum(sum(E))
+
+ans =
+
+    70
+
+q=ones(3,3)
+
+q =
+
+     1     1     1
+     1     1     1
+     1     1     1
+
+sum(sum(q))
+
+ans =
+
+     9
+
+addThreeInbulid(q)
+
+ans =
+
+     4     4     4
+     4     4     4
+     4     4     4
+
+
+ans =
+
+   8.1180e-04
+
+addThreeInbulid(q)
+
+ans =
+
+   3.5214e-04
+
+q
+
+q =
+
+     1     1     1
+     1     1     1
+     1     1     1
+
+
+addThreeLoops(q)
+
+n =
+
+     4     1     1
+     1     1     1
+     1     1     1
+
+
+n =
+
+     4     1     1
+     4     1     1
+     1     1     1
+
+
+n =
+
+     4     1     1
+     4     1     1
+     4     1     1
+
+
+n =
+
+     4     4     1
+     4     1     1
+     4     1     1
+
+
+n =
+
+     4     4     1
+     4     4     1
+     4     1     1
+
+
+n =
+
+     4     4     1
+     4     4     1
+     4     4     1
+
+
+n =
+
+     4     4     4
+     4     4     1
+     4     4     1
+
+
+n =
+
+     4     4     4
+     4     4     4
+     4     4     1
+
+
+n =
+
+     4     4     4
+     4     4     4
+     4     4     4
+
+
+ans =
+
+    0.0408
+
+addThreeLoops(q)
+
+ans =
+
+   8.3854e-04
+
+w=zeros(3,3)
+
+w =
+
+     0     0     0
+     0     0     0
+     0     0     0
+
+addThreeLoops(w)
+
+ans =
+
+   6.0700e-04
+
+
+addSumInbulid(w)
+
+ans =
+
+     0
+
+
+ans =
+
+   3.0777e-04
+
+addSumInbulid(q)
+
+ans =
+
+     9
+
+
+ans =
+
+   2.7364e-04
+
+addSumInbulid(q)
+
+ans =
+
+     9
+
+
+ans =
+
+    0.0012
+
+addSumLoops(w)
+
+y =
+
+     0
+
+
+y =
+
+     0
+
+
+y =
+
+     0
+
+
+y =
+
+     0
+
+
+y =
+
+     0
+
+
+y =
+
+     0
+
+
+y =
+
+     0
+
+
+y =
+
+     0
+
+
+y =
+
+     0
+
+
+ans =
+
+    0.0019
+
+addSumLoops(w)
+
+ans =
+
+   6.6674e-04
+
+Create37Matrix(5,4)
+
+ans =
+
+     3     7     3     7
+     7     3     7     3
+     3     7     3     7
+     7     3     7     3
+     3     7     3     7
+
+tic; Create37Matrix(5,4); toc;
+Elapsed time is 0.000955 seconds.
+tic; Create37Matrix(200000,80); toc;
+Elapsed time is 0.204299 seconds.
+tic; Create37Matrix(200000,80); t=toc;
+E=randi([1,7],1,8)
+
+E =
+
+     1     1     4     6     7     1     4     4
+
+E=randi([1,7],4,4)
+
+E =
+
+     1     3     2     4
+     3     4     5     1
+     2     2     5     2
+     6     5     6     7
+
+find(E==5)
+
+ans =
+
+     8
+    10
+    11
+
+sum(find(E==5))
+
+ans =
+
+    29
+
+z=find(E==5)
+
+z =
+
+     8
+    10
+    11
+
+size(z)
+
+ans =
+
+     3     1
+
+size(z,1)
+
+ans =
+
+     3
+
+E(E==5)
+
+ans =
+
+     5
+     5
+     5
+
+numel(E(E==5))
+
+ans =
+
+     3
+
+numel(find(E==5))
+
+ans =
+
+     3
+
+E
+
+E =
+
+     1     3     2     4
+     3     4     5     1
+     2     2     5     2
+     6     5     6     7
+
+numel(E(E==4))
+
+ans =
+
+     2
+
+numel(E(E==7))
+
+ans =
+
+     1
+
+numel(find(E==7))
+
+ans =
+
+     1
+
+numel(find(E==3))
+
+ans =
+
+     2
+
+AE=randi([1,10],4,4)
+
+AE =
+
+     2     1     1     1
+     9     5     8     4
+     6     2     9     3
+    10    10     9     9
+
+BE=randi([10,20],4,4)
+
+BE =
+
+    14    11    16    13
+    20    11    11    15
+    12    19    19    14
+    12    16    16    10
+
+xlswrite('name.xlsx',AT,'sheatname','A1')
+... 
+xlswrite('name.xlsx',AE,'sheatname','A1')
+...
+xlswrite('name.xlsx',BE,'sheatname','E5')
+xlswrite('name.xlsx',AE,'sheat','A1')
+...
+xlswrite('name.xlsx',BE,'sheat','D4')
+H=randi([1,10],4,4)
+
+H =
+
+     3     5     5     4
+     2     1     5     2
+     2    10     4     8
+     3    10    10     4
+
+J=randi([1,10],4,4)
+
+J =
+
+     3    10     3     1
+     5    10     4     2
+     1     6     9     7
+     2     1     1     8
+
+Hzmienna1 = find(H==1)
+
+Hzmienna1 =
+
+     6
+
+J(Hzmienna1(1:1:size(Hzmienna1)))=1
+
+J =
+
+     3    10     3     1
+     5     1     4     2
+     1     6     9     7
+     2     1     1     8
+
+Hzmienna2 = find(H==4)
+
+Hzmienna2 =
+
+    11
+    13
+    16
+
+J(Hzmienna2(1:1:size(Hzmienna2)))=4
+
+J =
+
+     3    10     3     4
+     5     1     4     2
+     1     6     4     7
+     2     1     1     4
+
+diary off

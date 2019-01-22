@@ -1,0 +1,213 @@
+AAA = randi([1,8],[1,19])
+
+AAA =
+
+     7     8     2     8     6     1     3     5     8     8     2     8     8     4     7     2     4     8     7
+
+BBB = zeros(10,10)
+
+BBB =
+
+     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0
+
+BBB(1:3:57)=AAA
+
+BBB =
+
+     7     0     0     2     0     0     0     0     0     0
+     0     0     5     0     0     8     0     0     0     0
+     0     6     0     0     7     0     0     0     0     0
+     8     0     0     8     0     0     0     0     0     0
+     0     0     8     0     0     7     0     0     0     0
+     0     1     0     0     2     0     0     0     0     0
+     2     0     0     8     0     0     0     0     0     0
+     0     0     8     0     0     0     0     0     0     0
+     0     3     0     0     4     0     0     0     0     0
+     8     0     0     4     0     0     0     0     0     0
+
+dgBBB=digraph(BBB)
+
+dgBBB = 
+
+  <a href="matlab:helpPopup digraph" style="font-weight:bold">digraph</a> with properties:
+
+    Edges: [19×2 table]
+    Nodes: [10×0 table]
+
+BBBplot=plot(dgBBB)
+
+BBBplot = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'  '6'  '7'  '8'  '9'  '10'}
+     EdgeLabel: {}
+         XData: [3.8877 1.5995 1.1115 4.8040 2.0239 2.6692 3.3656 0.3482 1.9385 5.3261]
+         YData: [0.8703 2.0239 1.1115 1.7866 1.5995 1.9385 2.3087 0.3482 2.6692 0.3482]
+         ZData: [0 0 0 0 0 0 0 0 0 0]
+
+  Show <a href="matlab:if exist('BBBplot', 'var'), matlab.graphics.internal.getForDisplay('BBBplot', BBBplot, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('BBBplot'), end">all properties</a>
+
+BBBplot=plot(dgBBB, 'EdgeLabel', dgBBB.Edges.Weight)
+
+BBBplot = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'  '6'  '7'  '8'  '9'  '10'}
+     EdgeLabel: {'7'  '2'  '5'  '8'  '6'  '7'  '8'  '8'  '8'  '7'  '1'  '2'  '2'  '8'  '8'  '3'  '4'  '8'  '4'}
+         XData: [3.8877 1.5995 1.1115 4.8040 2.0239 2.6692 3.3656 0.3482 1.9385 5.3261]
+         YData: [0.8703 2.0239 1.1115 1.7866 1.5995 1.9385 2.3087 0.3482 2.6692 0.3482]
+         ZData: [0 0 0 0 0 0 0 0 0 0]
+
+  Show <a href="matlab:if exist('BBBplot', 'var'), matlab.graphics.internal.getForDisplay('BBBplot', BBBplot, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('BBBplot'), end">all properties</a>
+
+BBBLoop=digraph(BBB, 'OmitSelfLoops')
+
+BBBLoop = 
+
+  <a href="matlab:helpPopup digraph" style="font-weight:bold">digraph</a> with properties:
+
+    Edges: [17×2 table]
+    Nodes: [10×0 table]
+
+BBBplot2=plot(dgBBB, 'EdgeLabel', dgBBB.Edges.Weight)
+
+BBBplot2 = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'  '6'  '7'  '8'  '9'  '10'}
+     EdgeLabel: {'7'  '2'  '5'  '8'  '6'  '7'  '8'  '8'  '8'  '7'  '1'  '2'  '2'  '8'  '8'  '3'  '4'  '8'  '4'}
+         XData: [3.8877 1.5995 1.1115 4.8040 2.0239 2.6692 3.3656 0.3482 1.9385 5.3261]
+         YData: [0.8703 2.0239 1.1115 1.7866 1.5995 1.9385 2.3087 0.3482 2.6692 0.3482]
+         ZData: [0 0 0 0 0 0 0 0 0 0]
+
+  Show <a href="matlab:if exist('BBBplot2', 'var'), matlab.graphics.internal.getForDisplay('BBBplot2', BBBplot2, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('BBBplot2'), end">all properties</a>
+
+BBBLoop=digraph(BBB, 'OmitSelfLoops')
+
+BBBLoop = 
+
+  <a href="matlab:helpPopup digraph" style="font-weight:bold">digraph</a> with properties:
+
+    Edges: [17×2 table]
+    Nodes: [10×0 table]
+
+BBBplot2=plot(dgBBB, 'EdgeLabel', dgBBB.Edges.Weight)
+
+BBBplot2 = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'  '6'  '7'  '8'  '9'  '10'}
+     EdgeLabel: {'7'  '2'  '5'  '8'  '6'  '7'  '8'  '8'  '8'  '7'  '1'  '2'  '2'  '8'  '8'  '3'  '4'  '8'  '4'}
+         XData: [3.8877 1.5995 1.1115 4.8040 2.0239 2.6692 3.3656 0.3482 1.9385 5.3261]
+         YData: [0.8703 2.0239 1.1115 1.7866 1.5995 1.9385 2.3087 0.3482 2.6692 0.3482]
+         ZData: [0 0 0 0 0 0 0 0 0 0]
+
+  Show <a href="matlab:if exist('BBBplot2', 'var'), matlab.graphics.internal.getForDisplay('BBBplot2', BBBplot2, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('BBBplot2'), end">all properties</a>
+
+BBBLoop=digraph(BBB, 'OmitSelfLoops')
+
+BBBLoop = 
+
+  <a href="matlab:helpPopup digraph" style="font-weight:bold">digraph</a> with properties:
+
+    Edges: [17×2 table]
+    Nodes: [10×0 table]
+
+BBBplot3=plot(BBBLoop)
+
+BBBplot3 = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'  '6'  '7'  '8'  '9'  '10'}
+     EdgeLabel: {}
+         XData: [3.8877 1.5995 1.1115 4.8040 2.0239 2.6692 3.3656 0.3482 1.9385 5.3261]
+         YData: [0.8703 2.0239 1.1115 1.7866 1.5995 1.9385 2.3087 0.3482 2.6692 0.3482]
+         ZData: [0 0 0 0 0 0 0 0 0 0]
+
+  Show <a href="matlab:if exist('BBBplot3', 'var'), matlab.graphics.internal.getForDisplay('BBBplot3', BBBplot3, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('BBBplot3'), end">all properties</a>
+
+BBBplot2=plot(dgBBB, 'EdgeLabel', dgBBB.Edges.Weight)
+
+BBBplot2 = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'  '6'  '7'  '8'  '9'  '10'}
+     EdgeLabel: {'7'  '2'  '5'  '8'  '6'  '7'  '8'  '8'  '8'  '7'  '1'  '2'  '2'  '8'  '8'  '3'  '4'  '8'  '4'}
+         XData: [3.8877 1.5995 1.1115 4.8040 2.0239 2.6692 3.3656 0.3482 1.9385 5.3261]
+         YData: [0.8703 2.0239 1.1115 1.7866 1.5995 1.9385 2.3087 0.3482 2.6692 0.3482]
+         ZData: [0 0 0 0 0 0 0 0 0 0]
+
+  Show <a href="matlab:if exist('BBBplot2', 'var'), matlab.graphics.internal.getForDisplay('BBBplot2', BBBplot2, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('BBBplot2'), end">all properties</a>
+
+BBBplot2=plot(BBBLoop, 'EdgeLabel', BBBLoop.Edges.Weight)
+
+BBBplot2 = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.GraphPlot" style="font-weight:bold">GraphPlot</a> with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'  '6'  '7'  '8'  '9'  '10'}
+     EdgeLabel: {'2'  '5'  '8'  '6'  '7'  '8'  '8'  '7'  '1'  '2'  '2'  '8'  '8'  '3'  '4'  '8'  '4'}
+         XData: [3.8877 1.5995 1.1115 4.8040 2.0239 2.6692 3.3656 0.3482 1.9385 5.3261]
+         YData: [0.8703 2.0239 1.1115 1.7866 1.5995 1.9385 2.3087 0.3482 2.6692 0.3482]
+         ZData: [0 0 0 0 0 0 0 0 0 0]
+
+  Show <a href="matlab:if exist('BBBplot2', 'var'), matlab.graphics.internal.getForDisplay('BBBplot2', BBBplot2, 'matlab.graphics.chart.primitive.GraphPlot'), else, matlab.graphics.internal.getForDisplay('BBBplot2'), end">all properties</a>
+
+diary M_10_01

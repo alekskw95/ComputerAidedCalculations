@@ -1,0 +1,680 @@
+A=randi([-3,3], [5,6])
+
+A =
+
+    -3     3     1    -3     3     3
+     2    -1     0     3     1    -2
+    -2     3     1    -2    -2     2
+    -1    -1     1    -3    -1     1
+     0     1    -2     0     0    -1
+
+B=A;
+B(3,2)=B(3,2)+1     %ten sam element +1
+
+B =
+
+    -3     3     1    -3     3     3
+     2    -1     0     3     1    -2
+    -2     4     1    -2    -2     2
+    -1    -1     1    -3    -1     1
+     0     1    -2     0     0    -1
+
+A==B
+
+ans =
+
+  5×6 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1   1   1   1   1   1
+   1   1   1   1   1   1
+   1   0   1   1   1   1
+   1   1   1   1   1   1
+   1   1   1   1   1   1
+
+all(A==B)
+
+ans =
+
+  1×6 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1   0   1   1   1   1
+
+all(A==B, 2)
+
+ans =
+
+  5×1 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1
+   1
+   0
+   1
+   1
+
+all(A==B, 1)
+
+ans =
+
+  1×6 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1   0   1   1   1   1
+
+any(A==B)
+
+ans =
+
+  1×6 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1   1   1   1   1   1
+
+C=A
+
+C =
+
+    -3     3     1    -3     3     3
+     2    -1     0     3     1    -2
+    -2     3     1    -2    -2     2
+    -1    -1     1    -3    -1     1
+     0     1    -2     0     0    -1
+
+C(:,1)=C(:,1)-1 %ca³a 1 kolumna - 1
+
+C =
+
+    -4     3     1    -3     3     3
+     1    -1     0     3     1    -2
+    -3     3     1    -2    -2     2
+    -2    -1     1    -3    -1     1
+    -1     1    -2     0     0    -1
+
+any(C==A)
+
+ans =
+
+  1×6 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   0   1   1   1   1   1
+
+
+any(C==A,2)
+
+ans =
+
+  5×1 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1
+   1
+   1
+   1
+   1
+
+all(all(A==B))
+
+ans =
+
+  <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a>
+
+   0
+
+isequal(A,B)  % 1 - ró¿ne 0 - takie same
+
+ans =
+
+  <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a>
+
+   0
+
+D=A
+
+D =
+
+    -3     3     1    -3     3     3
+     2    -1     0     3     1    -2
+    -2     3     1    -2    -2     2
+    -1    -1     1    -3    -1     1
+     0     1    -2     0     0    -1
+
+isequal(A,D)
+
+ans =
+
+  <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a>
+
+   1
+
+C(3,4)=nan
+
+C =
+
+    -4     3     1    -3     3     3
+     1    -1     0     3     1    -2
+    -3     3     1   NaN    -2     2
+    -2    -1     1    -3    -1     1
+    -1     1    -2     0     0    -1
+
+isequal(C,C)
+
+ans =
+
+  <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a>
+
+   0
+
+isequaln(C,C)  % kiedy NaN
+
+ans =
+
+  <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a>
+
+   1
+
+B=randi([-2,4],[7,4])
+
+B =
+
+    -1     2     3    -1
+     0    -1     0     2
+     1     0     2    -2
+    -2     2    -2     0
+     2    -1     4     0
+    -1     3     4    -1
+     0     4     3    -1
+
+ismember(A,B)
+
+ans =
+
+  5×6 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   0   1   1   0   1   1
+   1   1   1   1   1   1
+   1   1   1   1   1   1
+   1   1   1   0   1   1
+   1   1   1   1   1   1
+
+ismember(B,A) %zwraca wektor o tej samej d³ugoœci co B, zaw. log 1(true), gdzie el B s¹ w zbiorze A
+
+ans =
+
+  7×4 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1   1   1   1
+   1   1   1   1
+   1   1   1   1
+   1   1   1   1
+   1   1   0   1
+   1   1   0   1
+   1   0   1   1
+
+a=randi([-5,5],[10,1])
+
+a =
+
+    -1
+    -4
+     1
+     0
+     2
+     2
+     2
+    -5
+    -5
+    -2
+
+b=randi([-3,6],[15,1])
+
+b =
+
+     2
+     3
+     1
+     5
+     4
+     6
+     2
+     0
+    -2
+     3
+     4
+     1
+    -3
+    -1
+    -2
+
+[what,loc]=ismember(a,b)
+
+what =
+
+  10×1 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1
+   0
+   1
+   1
+   1
+   1
+   1
+   0
+   0
+   1
+
+
+loc =
+
+    14
+     0
+     3
+     8
+     1
+     1
+     1
+     0
+     0
+     9
+
+c=randi([-5,5],[10,2])
+
+c =
+
+    -2     2
+    -1    -2
+     0     2
+     0     2
+     4    -5
+     0    -3
+     5    -3
+     2     2
+     5     4
+    -3    -2
+
+d=randi([-3,6],[15,2])
+
+d =
+
+     4    -2
+     3     4
+    -3     1
+     3    -2
+     0     0
+     6     3
+    -3    -2
+     1     4
+     1    -1
+     1     6
+     4    -1
+     0     4
+     4    -2
+     1    -1
+    -3    -3
+
+ismember(c,d,'rows')
+
+ans =
+
+  10×1 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   1
+
+b
+
+b =
+
+     2
+     3
+     1
+     5
+     4
+     6
+     2
+     0
+    -2
+     3
+     4
+     1
+    -3
+    -1
+    -2
+
+unique(b) %usuwa duplikaty i dodatkowo sortuje
+
+ans =
+
+    -3
+    -2
+    -1
+     0
+     1
+     2
+     3
+     4
+     5
+     6
+
+c1=randi([-2,2], [25,1])
+
+c1 =
+
+     0
+     1
+     0
+     0
+     1
+     1
+     1
+     1
+     2
+    -1
+     1
+    -1
+    -2
+     1
+     0
+     0
+     1
+     1
+    -1
+     1
+     0
+     2
+     2
+    -1
+     1
+
+unique(c1,'rows')
+
+ans =
+
+    -2
+    -1
+     0
+     1
+     2
+
+c1=randi([-2,2], [25,2])
+
+c1 =
+
+     0     1
+     0     2
+     2     2
+    -1    -2
+    -1    -2
+    -2     1
+     2    -2
+     1     0
+     0     0
+     1     2
+     0     0
+     1    -1
+     0     1
+     1     1
+     0     0
+     2    -1
+    -1    -2
+    -2     0
+    -2    -1
+    -2    -2
+     0     1
+     0    -1
+    -1     0
+     1     1
+     1    -1
+
+unique(c1,'rows')
+
+ans =
+
+    -2    -2
+    -2    -1
+    -2     0
+    -2     1
+    -1    -2
+    -1     0
+     0    -1
+     0     0
+     0     1
+     0     2
+     1    -1
+     1     0
+     1     1
+     1     2
+     2    -2
+     2    -1
+     2     2
+
+A1=ones(5)
+
+A1 =
+
+     1     1     1     1     1
+     1     1     1     1     1
+     1     1     1     1     1
+     1     1     1     1     1
+     1     1     1     1     1
+
+A2=A1;
+A2(2,3)=0
+
+A2 =
+
+     1     1     1     1     1
+     1     1     0     1     1
+     1     1     1     1     1
+     1     1     1     1     1
+     1     1     1     1     1
+
+ismember(A2,A1)
+
+ans =
+
+  5×5 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1   1   1   1   1
+   1   1   0   1   1
+   1   1   1   1   1
+   1   1   1   1   1
+   1   1   1   1   1
+
+A1=5*ones(5)
+
+A1 =
+
+     5     5     5     5     5
+     5     5     5     5     5
+     5     5     5     5     5
+     5     5     5     5     5
+     5     5     5     5     5
+
+A2=A1
+
+A2 =
+
+     5     5     5     5     5
+     5     5     5     5     5
+     5     5     5     5     5
+     5     5     5     5     5
+     5     5     5     5     5
+
+A2(2,3)=0
+
+A2 =
+
+     5     5     5     5     5
+     5     5     0     5     5
+     5     5     5     5     5
+     5     5     5     5     5
+     5     5     5     5     5
+
+
+ismembertol(A2,A1,2)
+
+ans =
+
+  5×5 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1   1   1   1   1
+   1   1   1   1   1
+   1   1   1   1   1
+   1   1   1   1   1
+   1   1   1   1   1
+
+ismembertol(A2,A1,0.5)
+
+ans =
+
+  5×5 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1   1   1   1   1
+   1   1   0   1   1
+   1   1   1   1   1
+   1   1   1   1   1
+   1   1   1   1   1
+
+c2=[5 1 3 7 9 10]
+
+c2 =
+
+     5     1     3     7     9    10
+
+uniquetol(c2,0.2)
+
+ans =
+
+     1     5     9
+
+ismembertol(A2,A1,0.5/max([abs(A2(:));abs(A1(:))]))
+
+ans =
+
+  5×5 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1   1   1   1   1
+   1   1   0   1   1
+   1   1   1   1   1
+   1   1   1   1   1
+   1   1   1   1   1
+
+sort(A)   %sortowanie
+
+ans =
+
+    -3    -1    -2    -3    -2    -2
+    -2    -1     0    -3    -1    -1
+    -1     1     1    -2     0     1
+     0     3     1     0     1     2
+     2     3     1     3     3     3
+
+sort(A,2)
+
+ans =
+
+    -3    -3     1     3     3     3
+    -2    -1     0     1     2     3
+    -2    -2    -2     1     2     3
+    -3    -1    -1    -1     1     1
+    -2    -1     0     0     0     1
+
+sortrows(A,4)
+
+ans =
+
+    -3     3     1    -3     3     3
+    -1    -1     1    -3    -1     1
+    -2     3     1    -2    -2     2
+     0     1    -2     0     0    -1
+     2    -1     0     3     1    -2
+
+A
+
+A =
+
+    -3     3     1    -3     3     3
+     2    -1     0     3     1    -2
+    -2     3     1    -2    -2     2
+    -1    -1     1    -3    -1     1
+     0     1    -2     0     0    -1
+
+sortrows(A,5)
+
+ans =
+
+    -2     3     1    -2    -2     2
+    -1    -1     1    -3    -1     1
+     0     1    -2     0     0    -1
+     2    -1     0     3     1    -2
+    -3     3     1    -3     3     3
+
+sortrows(A,6)
+
+ans =
+
+     2    -1     0     3     1    -2
+     0     1    -2     0     0    -1
+    -1    -1     1    -3    -1     1
+    -2     3     1    -2    -2     2
+    -3     3     1    -3     3     3
+
+sortrows(A,[6,2])
+
+ans =
+
+     2    -1     0     3     1    -2
+     0     1    -2     0     0    -1
+    -1    -1     1    -3    -1     1
+    -2     3     1    -2    -2     2
+    -3     3     1    -3     3     3
+
+a
+
+a =
+
+    -1
+    -4
+     1
+     0
+     2
+     2
+     2
+    -5
+    -5
+    -2
+
+A
+
+A =
+
+    -3     3     1    -3     3     3
+     2    -1     0     3     1    -2
+    -2     3     1    -2    -2     2
+    -1    -1     1    -3    -1     1
+     0     1    -2     0     0    -1
+
+[A5, p]=sortrows(A,[6,2])
+
+A5 =
+
+     2    -1     0     3     1    -2
+     0     1    -2     0     0    -1
+    -1    -1     1    -3    -1     1
+    -2     3     1    -2    -2     2
+    -3     3     1    -3     3     3
+
+
+p =
+
+     2
+     5
+     4
+     3
+     1
+
+diary off

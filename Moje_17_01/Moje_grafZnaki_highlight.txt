@@ -1,0 +1,360 @@
+G=randi([0,1],5)
+
+G =
+
+     1     1     0     0     1
+     0     0     0     1     0
+     0     1     1     0     0
+     1     0     0     1     0
+     1     0     1     1     1
+
+dg=digraph(G)
+
+dg = 
+
+  digraph with properties:
+
+    Edges: [12×2 table]
+    Nodes: [5×0 table]
+
+pdG=plot(dg)
+
+pdG = 
+
+  GraphPlot with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'}
+     EdgeLabel: {}
+         XData: [0.1159 -0.7242 -0.8827 0.9977 0.4934]
+         YData: [1.1395 0.2239 -1.3458 0.5583 -0.5759]
+         ZData: [0 0 0 0 0]
+
+  Show all properties
+
+dg.Nodes.Name={'first', 'second', 'third', 'fourth', 'fifth'}'
+
+dg = 
+
+  digraph with properties:
+
+    Edges: [12×2 table]
+    Nodes: [5×1 table]
+
+pdG=plot(dg)
+
+pdG = 
+
+  GraphPlot with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'first'  'second'  'third'  'fourth'  'fifth'}
+     EdgeLabel: {}
+         XData: [0.1159 -0.7242 -0.8827 0.9977 0.4934]
+         YData: [1.1395 0.2239 -1.3458 0.5583 -0.5759]
+         ZData: [0 0 0 0 0]
+
+  Show all properties
+
+s=sum(G(G==1))
+
+s =
+
+    12
+
+w=randi(9,s,1)
+
+w =
+
+     2
+     8
+     5
+     9
+     1
+     4
+     1
+     9
+     1
+     7
+     8
+     8
+
+dg.Edges.Weight=w
+
+dg = 
+
+  digraph with properties:
+
+    Edges: [12×2 table]
+    Nodes: [5×1 table]
+
+dg.Edges
+
+ans =
+
+  12×2 table
+
+          EndNodes          Weight
+    ____________________    ______
+
+    'first'     'first'     2     
+    'first'     'second'    8     
+    'first'     'fifth'     5     
+    'second'    'fourth'    9     
+    'third'     'second'    1     
+    'third'     'third'     4     
+    'fourth'    'first'     1     
+    'fourth'    'fourth'    9     
+    'fifth'     'first'     1     
+    'fifth'     'third'     7     
+    'fifth'     'fourth'    8     
+    'fifth'     'fifth'     8     
+
+pdG=plot(dg, 'EdgeLabel', dg.Edges.Weight)
+
+pdG = 
+
+  GraphPlot with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'first'  'second'  'third'  'fourth'  'fifth'}
+     EdgeLabel: {'2'  '8'  '5'  '9'  '1'  '4'  '1'  '9'  '1'  '7'  '8'  '8'}
+         XData: [0.1159 -0.7242 -0.8827 0.9977 0.4934]
+         YData: [1.1395 0.2239 -1.3458 0.5583 -0.5759]
+         ZData: [0 0 0 0 0]
+
+  Show all properties
+
+pdG=plot(dg, 'EdgeLabel', dg.Edges.Weight)
+
+pdG = 
+
+  GraphPlot with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'first'  'second'  'third'  'fourth'  'fifth'}
+     EdgeLabel: {'2'  '8'  '5'  '9'  '1'  '4'  '1'  '9'  '1'  '7'  '8'  '8'}
+         XData: [0.1159 -0.7242 -0.8827 0.9977 0.4934]
+         YData: [1.1395 0.2239 -1.3458 0.5583 -0.5759]
+         ZData: [0 0 0 0 0]
+
+  Show all properties
+
+path = shortestpath(dg,'first','fifth');
+  
+highlight(pdG,path,'NodeColor','r', 'LineStyle','--', 'EdgeColor','g', 'Marker','^')
+
+highlight(pdG,dg.Nodes.Name,'NodeColor','r')
+
+highlight(pdG,dg.Nodes.Name,'NodeColor','r', 'Marker','^')
+
+-------------------------------------------------------------
+
+G=triu(G)
+
+G =
+
+     1     1     0     0     1
+     0     0     0     1     0
+     0     0     1     0     0
+     0     0     0     1     0
+     0     0     0     0     1
+
+G=G+G'
+
+G =
+
+     2     1     0     0     1
+     1     0     0     1     0
+     0     0     2     0     0
+     0     1     0     2     0
+     1     0     0     0     2
+
+G=min(G,1)
+
+G =
+
+     1     1     0     0     1
+     1     0     0     1     0
+     0     0     1     0     0
+     0     1     0     1     0
+     1     0     0     0     1
+
+dg=graph(G)
+
+dg = 
+
+  graph with properties:
+
+    Edges: [7×2 table]
+    Nodes: [5×0 table]
+
+pdG=plot(dg)
+
+pdG = 
+
+  GraphPlot with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'1'  '2'  '3'  '4'  '5'}
+     EdgeLabel: {}
+         XData: [1.6235 0.9252 2.8427 0.2941 2.2546]
+         YData: [0.9252 1.6235 0.2941 2.2546 0.2941]
+         ZData: [0 0 0 0 0]
+
+  Show all properties
+
+dg.Nodes.Name={'first', 'second', 'third', 'fourth', 'fifth'}'
+
+dg = 
+
+  graph with properties:
+
+    Edges: [7×2 table]
+    Nodes: [5×1 table]
+
+pdG=plot(dg)
+
+pdG = 
+
+  GraphPlot with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'first'  'second'  'third'  'fourth'  'fifth'}
+     EdgeLabel: {}
+         XData: [1.6235 0.9252 2.8427 0.2941 2.2546]
+         YData: [0.9252 1.6235 0.2941 2.2546 0.2941]
+         ZData: [0 0 0 0 0]
+
+  Show all properties
+
+dg.Edges
+
+ans =
+
+  7×2 table
+
+          EndNodes          Weight
+    ____________________    ______
+
+    'first'     'first'     1     
+    'first'     'second'    1     
+    'first'     'fifth'     1     
+    'second'    'fourth'    1     
+    'third'     'third'     1     
+    'fourth'    'fourth'    1     
+    'fifth'     'fifth'     1     
+
+w=randi(9,7,1)
+
+w =
+
+     2
+     3
+     4
+     1
+     9
+     9
+     5
+
+dg.Edges.Weight=w
+
+dg = 
+
+  graph with properties:
+
+    Edges: [7×2 table]
+    Nodes: [5×1 table]
+
+pdG=plot(dg, 'EdgeLabel', dg.Edges.Weight)
+
+pdG = 
+
+  GraphPlot with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'first'  'second'  'third'  'fourth'  'fifth'}
+     EdgeLabel: {'2'  '3'  '4'  '1'  '9'  '9'  '5'}
+         XData: [1.6235 0.9252 2.8427 0.2941 2.2546]
+         YData: [0.9252 1.6235 0.2941 2.2546 0.2941]
+         ZData: [0 0 0 0 0]
+
+  Show all properties
+
+dg.Edges
+
+ans =
+
+  7×2 table
+
+          EndNodes          Weight
+    ____________________    ______
+
+    'first'     'first'     2     
+    'first'     'second'    3     
+    'first'     'fifth'     4     
+    'second'    'fourth'    1     
+    'third'     'third'     9     
+    'fourth'    'fourth'    9     
+    'fifth'     'fifth'     5     
+
+pdG=plot(dg, 'EdgeLabel', dg.Edges.Weight)
+
+pdG = 
+
+  GraphPlot with properties:
+
+     NodeColor: [0 0.4470 0.7410]
+    MarkerSize: 4
+        Marker: 'o'
+     EdgeColor: [0 0.4470 0.7410]
+     LineWidth: 0.5000
+     LineStyle: '-'
+     NodeLabel: {'first'  'second'  'third'  'fourth'  'fifth'}
+     EdgeLabel: {'2'  '3'  '4'  '1'  '9'  '9'  '5'}
+         XData: [1.6235 0.9252 2.8427 0.2941 2.2546]
+         YData: [0.9252 1.6235 0.2941 2.2546 0.2941]
+         ZData: [0 0 0 0 0]
+
+  Show all properties
+
+highlight(pdG,dg.Nodes.Name,'NodeColor','r')
+sp = minspantree(dg);
+highlight(pdG,sp,'EdgeColor','r','LineWidth',1.5)
+highlight(pdG,dg.Nodes.Name,'NodeColor','g')
+highlight(pdG,dg.Nodes.Name,'NodeColor','g','Marker','^')
